@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class N08MaxAndMinElements {
 	
 	public static void main(String[] args) {
-		List<Integer> asList = Arrays.asList(10,20,5,2,10,80);
+		List<Integer> asList = Arrays.asList(10,20,5,2,10,80); //2,5,10,10,20,80==> 80,20,10,10,5,2
 		
 		//Method-1
 		Optional<Integer> min = asList.stream().collect(Collectors.minBy(Comparator.naturalOrder()));

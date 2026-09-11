@@ -6,6 +6,8 @@ import java.util.List;
 public class ToArray {
 
 	public static void main(String[] args) {
+		
+		String[] names=new String[] {};
 		List<String> words = Arrays.asList("apple", "banana", "cherry");
 		String[] wordArray = words.stream().toArray(String[]::new);
 		System.out.println(Arrays.toString(wordArray));
@@ -27,8 +29,8 @@ public class ToArray {
 		Character[] charArray = chars.stream().toArray(Character[]::new);
 		System.out.println(Arrays.toString(charArray));
 		
-		List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
-		String[] nameArray = names.stream().toArray(String[]::new);
+		List<String> name1 = Arrays.asList("Alice", "Bob", "Charlie");
+		String[] nameArray = name1.stream().toArray(String[]::new);
 		System.out.println(Arrays.toString(nameArray));
 
 	}

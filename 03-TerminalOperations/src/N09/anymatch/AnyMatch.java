@@ -6,7 +6,7 @@ import java.util.List;
 public class AnyMatch {
 	
 	public static void main(String[] args) {
-		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+		List<Integer> numbers = Arrays.asList(1, 7, 3, 9, 8);
 		boolean anyEven = numbers.stream().anyMatch(n -> n % 2 == 0);
 		System.out.println("Any Even Number: " + anyEven);
 		

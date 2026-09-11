@@ -1,0 +1,96 @@
+🧠 1️⃣ METHOD REFERENCE
+======================
+Method Reference is a shorthand for a lambda expression that calls an existing method.
+
+Syntax:
+-------
+ClassName::methodName
+or
+objectName::methodName
+
+
+✅ Example 1: Reference to a static method
+------------------------------------------
+@FunctionalInterface
+interface Sayable {
+    void say();
+}
+
+class Demo {
+    public static void greet() {
+        System.out.println("Hello from static method!");
+    }
+
+    public static void main(String[] args) {
+        Sayable s = Demo::greet; // Method reference to static method
+        s.say();
+    }
+}
+
+
+✅ Example 2: Reference to an instance method of a particular object:
+---------------------------------------------------------------------
+
+@FunctionalInterface
+interface Printer {
+    void print();
+}
+
+public class Example {
+    public void display() {
+        System.out.println("Printing via instance method reference!");
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        Printer p = obj::display; // Method reference
+        p.print();
+    }
+}
+
+
+✅ Example 3: Reference to an instance method of an arbitrary object
+-------------------------------------------------------------------
+import java.util.Arrays;
+import java.util.List;
+
+public class Example {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("thiru", "hello", "guru");
+        names.forEach(String::toUpperCase); // invalid (doesn't print)
+        names.forEach(System.out::println); // valid reference
+    }
+}
+
+✅ Example 4: Reference to a static method with parameters
+-----------------------------------------------------------
+
+import java.util.function.BiFunction;
+
+public class Calculator {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        BiFunction<Integer, Integer, Integer> adder = Calculator::add;
+        System.out.println("Sum: " + adder.apply(10, 20));
+    }
+}
+
+
+✅ Example 5: Reference to an instance method of an arbitrary type
+--------------------------------------------------------------------
+
+import java.util.Arrays;
+
+public class Example {
+    public static void main(String[] args) {
+        String[] names = {"Thiru", "Hello", "Guru"};
+        Arrays.sort(names, String::compareToIgnoreCase); // Method reference
+        for (String n : names)
+            System.out.println(n);
+    }
+}
+
+

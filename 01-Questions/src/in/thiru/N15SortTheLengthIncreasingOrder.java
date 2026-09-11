@@ -13,6 +13,10 @@ public class N15SortTheLengthIncreasingOrder {
 		List<String> asList = Arrays.asList("sunny","bunny","chinnii","thirumala");
 		
 		
+		List<Integer> collect = asList.stream().map(s->s.length()).sorted().collect(Collectors.toList());
+		System.out.println(collect);
+		
+		
 	//sort the string elements in ascending order
 	 List<String> ascending = asList.stream().sorted(Comparator.comparingInt(String::length)).collect(Collectors.toList());
 	 List<String> descending = asList.stream().sorted(Comparator.comparingInt(String::length).reversed()).collect(Collectors.toList());

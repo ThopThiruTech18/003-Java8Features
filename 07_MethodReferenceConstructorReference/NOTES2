@@ -1,0 +1,101 @@
+🧩 2️⃣ CONSTRUCTOR REFERENCE
+============================
+Constructor Reference is used to refer to a constructor instead of calling it directly.
+
+Syntax:
+-------
+ClassName::new
+
+
+✅ Example 1: No-arg constructor
+--------------------------------
+interface Messageable {
+    Message getMessage();
+}
+
+class Message {
+    public Message() {
+        System.out.println("Hello from constructor reference!");
+    }
+}
+
+public class Example {
+    public static void main(String[] args) {
+        Messageable m = Message::new; // Constructor reference
+        m.getMessage();
+    }
+}
+
+
+
+✅ Example 2: Parameterized constructor:
+-----------------------------------------
+interface PersonFactory {
+    Person create(String name);
+}
+
+class Person {
+    Person(String name) {
+        System.out.println("Created person: " + name);
+    }
+}
+
+public class Example {
+    public static void main(String[] args) {
+        PersonFactory pf = Person::new; // Constructor reference
+        pf.create("Thiru");
+    }
+}
+
+
+
+✅ Example 3: Using Supplier (No-arg):
+----------------------------------------
+import java.util.function.Supplier;
+
+class Student {
+    Student() {
+        System.out.println("Student object created");
+    }
+}
+
+public class Example {
+    public static void main(String[] args) {
+        Supplier<Student> supplier = Student::new; // Constructor reference
+        supplier.get();
+    }
+}
+
+
+✅ Example 4: Using Function (One-arg):
+---------------------------------------
+import java.util.function.Function;
+
+class Employee {
+    Employee(String name) {
+        System.out.println("Employee created: " + name);
+    }
+}
+
+public class Example {
+    public static void main(String[] args) {
+        Function<String, Employee> emp = Employee::new; // Constructor reference
+        emp.apply("Thiru");
+    }
+}
+
+✅ Example 5: Using Array Constructor Reference:
+---------------------------------------------------
+import java.util.function.IntFunction;
+import java.util.Arrays;
+
+public class Example {
+    public static void main(String[] args) {
+        IntFunction<int[]> arrayCreator = int[]::new; // Array constructor reference
+        int[] arr = arrayCreator.apply(5);
+        Arrays.fill(arr, 100);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+

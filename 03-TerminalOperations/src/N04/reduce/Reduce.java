@@ -28,7 +28,7 @@ public class Reduce {
 		
 		
 		List<String> words1 = Arrays.asList("apple", "banana", "cherry");
-		String concatenated1 = words1.stream().reduce("", (a, b) -> a + ", " + b);
+		String concatenated1 = words1.stream().reduce("  ", (a, b) -> a + ", " + b);
 		System.out.println("Concatenated: " + concatenated1);
 		
 	}

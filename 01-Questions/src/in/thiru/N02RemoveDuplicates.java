@@ -14,54 +14,42 @@ import java.util.stream.Collectors;
  3]Collectors.toCollection(TreeSet :: new)
  */
 public class N02RemoveDuplicates {
-	
+
 	public static void main(String[] args) {
-		
+
 //		practice1();
-		
-		List<Integer> asList = Arrays.asList(10,20,50,22,23,23,10);
-		List<Integer> collect = asList.stream().distinct().collect(Collectors.toList()); System.out.println("using distinct :: "+collect);
-		LinkedHashSet<Integer> collect2 = asList.stream().collect(Collectors.toCollection(LinkedHashSet :: new));System.out.println("using LinkedHashSet :: "+collect2);
-		TreeSet<Integer> collect3 = asList.stream().collect(Collectors.toCollection(TreeSet :: new));System.out.println("using TreeSet :: "+collect3);
+
+		List<Integer> asList = Arrays.asList(10, 20, 50, 22, 23, 23, 10);
+		List<Integer> collect = asList.stream().distinct().collect(Collectors.toList());
 		
 		
+		System.out.println("using distinct :: " + collect);
+		LinkedHashSet<Integer> collect2 = asList.stream().collect(Collectors.toCollection(LinkedHashSet::new));
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println("using LinkedHashSet :: " + collect2);
+		TreeSet<Integer> collect3 = asList.stream().collect(Collectors.toCollection(TreeSet::new));
+		System.out.println("using TreeSet :: " + collect3);
+
 	}
 
 	private static void practice1() {
-		//method-1
+		// method-1
 		System.out.println("method-1");
-		List<Integer> asList = Arrays.asList(10,20,50,22,23,23,10);
+		List<Integer> asList = Arrays.asList(10, 20, 50, 22, 23, 23, 10);
 		List<Integer> unique = asList.stream().distinct().collect(Collectors.toList());
 		System.out.println(unique);
-		
-		//method-2
+
+		// method-2
 		System.out.println("method-2");
-		List<Integer> asList2 = Arrays.asList(11,11,22,33,44,55,22);
-		LinkedHashSet<Integer> collect = asList2.stream().collect(Collectors.toCollection(LinkedHashSet :: new));	System.out.println(collect);
-	
-		
-		//method-3
+		List<Integer> asList2 = Arrays.asList(11, 11, 22, 33, 44, 55, 22);
+		LinkedHashSet<Integer> collect = asList2.stream().collect(Collectors.toCollection(LinkedHashSet::new));
+		System.out.println(collect);
+
+		// method-3
 		System.out.println("method-3");
-		TreeSet<Integer> collect2 = asList2.stream().collect(Collectors.toCollection(TreeSet :: new));System.out.println(collect2);
+		TreeSet<Integer> collect2 = asList2.stream().collect(Collectors.toCollection(TreeSet::new));
+		System.out.println(collect2);
 	}
 
 }

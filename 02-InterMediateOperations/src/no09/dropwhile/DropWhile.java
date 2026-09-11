@@ -25,7 +25,7 @@ public static void main(String[] args) {
 	System.out.println("After DropWhile: " + afterDropWhile);
 	
 	
-	String sentence = "The quick brown fox jumps over the lazy dog";
+	String sentence = "The h hi lo qui brown fox jumps over the lazy dog a";
 	List<String> afterDropWhile1 = Arrays.stream(sentence.split("\\s+")).dropWhile(word -> word.length() < 4).collect(Collectors.toList());
 	System.out.println("After DropWhile: " + afterDropWhile1);
 	

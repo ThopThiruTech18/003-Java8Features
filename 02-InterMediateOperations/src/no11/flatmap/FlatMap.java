@@ -9,6 +9,8 @@ import java.util.stream.Stream;
 public class FlatMap {
 
 	public static void main(String[] args) {
+		
+		//collection,collection2,collection3---> collection
 
 		long startTime1 = System.currentTimeMillis();
 		List<List<Integer>> nestedList1 = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4), Arrays.asList(5, 6));

@@ -123,13 +123,14 @@ public class Employee {
 		System.out.println("No of male and female employees are" + collect);
 
 //					2. Print the name of all departments in the organization ?             :: all departments count==>?
-		List<String> collect2 = employeeList.stream().map(name -> name.getDepartment()).distinct()
+		List<String> collect2 = employeeList.stream().map(Employee::getDepartment).distinct()
 				.collect(Collectors.toList());
 		System.out.println(collect2);
 
 //					3. What is the average age of male and female employees ?              :: male & female avg=?
 
-		Map<String, Double> collect3 = employeeList.stream()
+		Map<String, Double> collect3 = 
+				employeeList.stream()
 				.collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getAge)));
 		System.out.println("Average age of the male and female employees are ::" + collect3);
 
@@ -149,7 +150,7 @@ public class Employee {
 
 //					5. Get the names of all employees who have joined after 2015 ?         :: who joinded ofter 2015
 
-		List<Employee> collect5 = employeeList.stream().filter(jdate -> jdate.getYearOfJoining() > 2015)
+		List<Employee> collect5 = employeeList.stream().filter(emp -> emp.getYearOfJoining() > 2015)
 				.collect(Collectors.toList());
 		System.out.println(collect5);
 

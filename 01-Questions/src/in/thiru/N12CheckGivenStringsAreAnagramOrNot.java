@@ -9,13 +9,13 @@ public class N12CheckGivenStringsAreAnagramOrNot {
 		String name1="listen";
 		String name2="silent";
 	    
-		List<Integer> collect = name1.chars().sorted().boxed().collect(Collectors.toList());
+		List<Integer> collect1 = name1.chars().sorted().boxed().collect(Collectors.toList());
+		
+		List<Integer> collect2 = name2.chars().sorted().boxed().collect(Collectors.toList());
 		
 		
 		
-		boolean areEquals = name1.chars().sorted().boxed().collect(Collectors.toList()).equals(name2.chars().sorted().boxed().collect(Collectors.toList()));
-		System.out.println(areEquals);
-		if(areEquals)
+		if(collect1.equals(collect2))
 		{
 			System.out.println("anagram");
 		}

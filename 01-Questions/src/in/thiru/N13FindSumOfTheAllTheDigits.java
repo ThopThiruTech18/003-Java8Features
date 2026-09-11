@@ -12,7 +12,9 @@ public class N13FindSumOfTheAllTheDigits {
 	int number=123456;
 	//method-1
 	IntStream map = String.valueOf(number).chars().map(Character::getNumericValue);
+	System.out.println(map);
 	System.out.println(map.sum());
+	System.out.println(map.average());
 	
 	//method-2
 	
@@ -22,7 +24,6 @@ public class N13FindSumOfTheAllTheDigits {
 	System.out.println(statistic.getMax());
 	System.out.println(statistic.getMin());
 	System.out.println(statistic.getCount());
-	System.out.println(statistic.getMax());
 		
 		
 	}

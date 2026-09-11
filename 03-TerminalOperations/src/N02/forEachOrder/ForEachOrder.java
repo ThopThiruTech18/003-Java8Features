@@ -11,6 +11,7 @@ public class ForEachOrder {
 
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 		numbers.stream().forEachOrdered(n -> System.out.print(n + " "));
+		
 
 		List<Double> prices = Arrays.asList(10.5, 20.0, 15.75);
 		prices.stream().forEachOrdered(price -> System.out.printf("%.2f ", price));

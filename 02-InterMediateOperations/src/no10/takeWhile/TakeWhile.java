@@ -37,9 +37,10 @@ public class TakeWhile {
 		List<Character> takenWhile3 = chars.stream().takeWhile(c -> c < 'd').collect(Collectors.toList());
 		System.out.println("Taken While: " + takenWhile3);
 		
-		List<String> strings = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+		List<String> strings = Arrays.asList("elde","banan", "cherr", "date" );
 		List<String> takenWhile4 = strings.stream().takeWhile(s -> s.length() < 6).collect(Collectors.toList());
 		System.out.println("Taken While: " + takenWhile4);
+		
 	}
 
 }
